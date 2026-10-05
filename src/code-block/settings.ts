@@ -41,7 +41,7 @@ const DEFAULT_SETTINGS: Settings = {
     400: 2,
     200: 1,
   },
-  validExtensions: [
+  validextensions: [
     "jpeg",
     "jpg",
     "gif",
