@@ -19,8 +19,6 @@ type InsensitiveVault = Vault & {
   getAbstractFileByPathInsensitive?: null | ((path: string) => TAbstractFile | null);
 };
 
-const VALID_EXTENSIONS = ["jpeg", "jpg", "gif", "png", "webp", "tiff", "tif", "md"];
-
 const getFilesRecursive = (files: TAbstractFile[], recursive = false) =>
   files.reduce((children, abstractFile) => {
     if (recursive && abstractFile instanceof TFolder) {
@@ -82,7 +80,9 @@ const filterFileList = (
 ) => {
   const filteredFiles = files
     .filter(
-      file => file.path !== sourcePath && VALID_EXTENSIONS.includes(file.extension),
+      file =>
+        file.path !== sourcePath &&
+        settings.validExtensions.includes(file.extension),
     )
     // Prevent any have a `note-gallery` being rendered in the note-gallery
     // this will cause recursion issues and weird bugs...
