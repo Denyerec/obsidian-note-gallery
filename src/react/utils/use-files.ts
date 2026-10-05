@@ -82,7 +82,7 @@ const filterFileList = (
     .filter(
       file =>
         file.path !== sourcePath &&
-        settings.validExtensions.includes(file.extension),
+        settings.validextensions.includes(file.extension),
     )
     // Prevent any have a `note-gallery` being rendered in the note-gallery
     // this will cause recursion issues and weird bugs...
