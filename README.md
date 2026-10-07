@@ -52,6 +52,7 @@ path: atlas          # optional: current note folder | path/to/folder - you don'
                      # to use path if you are using query, path will source additional notes
 recursive: true      # optional: true | false
 limit: 10            # optional: 0 | any number
+validextensions: 'md,txt' # optional: Comma list of extensions to show
 sort: desc           # optional: desc | asc
 sortBy: mtime        # optional: mtime | ctime | name
 sortRandom: false    # optional: false | true - randomly sorts the cards, overrides other sorting options
