@@ -13,7 +13,7 @@ export interface Settings {
   showtitle: boolean;
   debugquery: boolean;
   breakpoints: number | { default: number; [key: number]: number };
-  validextensions: string[];
+  validextensions: string;
 }
 
 const DEFAULT_SETTINGS: Settings = {
@@ -41,16 +41,7 @@ const DEFAULT_SETTINGS: Settings = {
     400: 2,
     200: 1,
   },
-  validextensions: [
-    "jpeg",
-    "jpg",
-    "gif",
-    "png",
-    "webp",
-    "tiff",
-    "tif",
-    "md",
-  ],
+  validextensions: "md,txt",
 };
 
 type AnyObject = { [key: string]: AnyObject };
