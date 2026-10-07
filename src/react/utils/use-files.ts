@@ -78,7 +78,7 @@ const filterFileList = (
   settings: Settings,
   randomSeed: number = 50,
 ) => {
-  const validExtensions = settings.validExtensions
+  const validExtensions = settings.validextensions
     .split(",")
     .map(extension => extension.trim().toLowerCase())
     .filter(Boolean);
