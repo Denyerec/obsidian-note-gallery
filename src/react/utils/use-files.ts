@@ -71,11 +71,6 @@ function deterministicShuffle(files: TFile[], seed: number) {
     .map(({ item }) => item); // Extract sorted items
 }
 
-const validExtensions = settings.validextensions
-    .split(",")
-    .map(extension => extension.trim().toLowerCase())
-    .filter(Boolean);
-
 const filterFileList = (
   files: TFile[],
   db: Database<dbHTMLEntry>,
@@ -83,9 +78,16 @@ const filterFileList = (
   settings: Settings,
   randomSeed: number = 50,
 ) => {
+  const validExtensions = settings.validExtensions
+    .split(",")
+    .map(extension => extension.trim().toLowerCase())
+    .filter(Boolean);
+
   const filteredFiles = files
     .filter(
-      file => file.path !== sourcePath && validExtensions.includes(file.extension.toLowerCase())
+      file =>
+        file.path !== sourcePath &&
+        validExtensions.includes(file.extension.toLowerCase())
     )
     
     // Prevent any have a `note-gallery` being rendered in the note-gallery
